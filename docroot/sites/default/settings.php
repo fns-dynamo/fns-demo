@@ -629,11 +629,12 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 # $conf['allow_css_double_underscores'] = TRUE;
 $databases['default']['default'] = array (
-  'database' => getenv('DBNAME'),
-  'username' => getenv('DBUSERNAME'),
-  'password' => getenv('DBPASSWORD'),
+  'database' => getenv('DB_NAME'),
+  'username' => getenv('DB_USERNAME'),
+  'password' => getenv('DB_PASSWORD'),
   'prefix' => '',
-  'host' => getenv('DBHOST'),
+  'host' => getenv('DB_HOST'),
   'port' => '3306',
   'driver' => 'mysql',
 );
+$config['system.logging']['error_level']='verbose';
