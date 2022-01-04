@@ -41,6 +41,10 @@ stages:
         php -version
       workingDirectory: $(rootFolder)
       displayName: 'Use PHP version $(phpVersion)'
+    
+    - script: composer update
+      workingDirectory: $(rootFolder)
+      displayName: 'Composer update'
 
     - script: composer install --no-interaction --prefer-dist
       workingDirectory: $(rootFolder)
