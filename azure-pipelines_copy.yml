@@ -20,7 +20,7 @@ variables:
   environmentName: 'fns-demo-linux'
 
   # Root folder under which your composer.json file is available.
-  rootFolder: $(System.DefaultWorkingDirectory)
+  rootFolder: $(System.DefaultWorkingDirectory)/docroot
 
 stages:
 - stage: Build
@@ -40,10 +40,11 @@ stages:
         sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
         php -version
       workingDirectory: $(rootFolder)
+      workingDirectory: /var/www/html
       displayName: 'Use PHP version $(phpVersion)'
 
     - script: composer install --no-interaction --prefer-dist
-      workingDirectory: $(rootFolder)/docroot
+      workingDirectory: $(rootFolder)
       displayName: 'Composer install'
 
     - task: ArchiveFiles@2
