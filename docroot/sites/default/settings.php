@@ -639,4 +639,4 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'driver' => 'mysql',
 );
-$config['system.logging']['error_level']='verbose';
+//$config['system.logging']['error_level']='verbose';
